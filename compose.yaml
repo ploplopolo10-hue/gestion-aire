@@ -1,0 +1,10 @@
+services:
+  api:
+    build: .
+    ports:
+      - "8000:8000"
+    environment:
+      SECRET_KEY: ${SECRET_KEY:-development-only-change-me}
+      DATABASE_URL: sqlite:///./gestion_aire.db
+    volumes:
+      - ./data:/app/data
